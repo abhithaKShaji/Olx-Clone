@@ -1,5 +1,4 @@
-import React, { useState,useContext } from 'react';
-import {firebaseContext} from '../../store/context'
+import React, { useState } from 'react';
 import Logo from '../../olx-logo.png';
 import './Login.css';
 import {getAuth,signInWithEmailAndPassword} from 'firebase/auth'
@@ -9,7 +8,6 @@ import { Link } from 'react-router-dom';
 function Login() {
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
-  const {firebase} = useContext(firebaseContext)
   const navigate = useNavigate()
 
   const handleLogin = (e)=>{
@@ -24,7 +22,7 @@ function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+        <img width="200px" height="200px" src={Logo} alt=""></img>
         <form onSubmit={handleLogin}>
           <label htmlFor="fname">Email</label>
           <br />
@@ -53,7 +51,7 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <Link to='/signup'><a>Signup</a></Link>
+        <Link to='/signup'>Signup</Link>
       </div>
     </div>
   );

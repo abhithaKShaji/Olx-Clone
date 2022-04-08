@@ -1,11 +1,11 @@
-import React,{useContext, useState} from 'react';
+import React,{useContext} from 'react';
 import './Header.css';
 import OlxLogo from '../../assets/OlxLogo';
 import Search from '../../assets/Search';
 import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
-import { AuthContext, firebaseContext } from '../../store/context';
+import { AuthContext } from '../../store/context';
 import {getAuth, signOut} from 'firebase/auth'
 import {Link, useNavigate} from 'react-router-dom'
 
@@ -13,12 +13,11 @@ import {Link, useNavigate} from 'react-router-dom'
 function Header() {
   const navigate = useNavigate()
   const {user} = useContext(AuthContext)
-  const {firebase} = useContext(firebaseContext)
   
   
   const handleSell = (e)=>{
     e.preventDefault()
-    {user ? navigate('/create') : navigate('/login')}
+    user ? navigate('/create') : navigate('/login')
   }
 
 

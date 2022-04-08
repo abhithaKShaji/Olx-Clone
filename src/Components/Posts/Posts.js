@@ -1,7 +1,6 @@
 import React,{useState,useEffect,useContext} from 'react';
 
 import Heart from '../../assets/Heart';
-import { firebaseContext } from '../../store/context';
 import './Post.css';
 import { collection, getDocs } from 'firebase/firestore'
 import {db} from '../../firebase/config'
@@ -9,13 +8,13 @@ import { postContext } from '../../store/postContext';
 import {useNavigate} from 'react-router-dom'
 
 function Posts() {
-  const {firebase} = useContext(firebaseContext)
   const [products,setProducts] = useState([])
   const {setPostDetails} = useContext(postContext)
   const navigate = useNavigate()
 
-  useEffect(async()=>{
-    const snapshot = await getDocs(collection(db,'products'))
+  useEffect(()=>{
+    async function getAllPost(){
+      const snapshot = await getDocs(collection(db,'products'))
       const allPost = snapshot.docs.map((product)=>{
         return{
           ...product.data(),
@@ -23,6 +22,9 @@ function Posts() {
         }
       })
       setProducts(allPost)
+    }
+    
+    getAllPost()
   },[])
   return (
     <div className="postParentDiv">

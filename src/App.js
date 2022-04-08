@@ -6,14 +6,13 @@ import Login from './Pages/Login'
 import Create from './Pages/Create'
 import View from './Pages/ViewPost'
 import Home from './Pages/Home';
-import { AuthContext, firebaseContext } from './store/context';
+import { AuthContext } from './store/context';
 import {getAuth,onAuthStateChanged} from 'firebase/auth'
 import Post from './store/postContext';
 import { Navigate } from 'react-router-dom';
 
 function App() {
   const {setUser} = useContext(AuthContext)
-  const {firebase} = useContext(firebaseContext)
 
   useEffect(()=>{
     const auth = getAuth();

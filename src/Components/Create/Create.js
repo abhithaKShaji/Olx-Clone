@@ -2,13 +2,12 @@ import React, { Fragment, useContext, useState } from 'react';
 import './Create.css';
 import Header from '../Header/Header';
 import {useNavigate} from 'react-router-dom'
-import {firebaseContext,AuthContext} from '../../store/context'
+import {AuthContext} from '../../store/context'
 import { getDownloadURL,ref, getStorage, uploadBytes } from 'firebase/storage';
 import {addDoc,collection} from 'firebase/firestore'
 import {db} from '../../firebase/config'
 
 const Create = () => {
-  const {firebase} = useContext(firebaseContext)
   const {user} = useContext(AuthContext)
   const navigate = useNavigate()
   const [name,setName] = useState('')
@@ -23,7 +22,7 @@ const Create = () => {
     uploadBytes(storageRef,image).then((snapshot)=>{
       getDownloadURL(snapshot.ref).then(async(url)=>{
         console.log(url);
-        const docRef = await addDoc(collection(db,'products'),{
+        await addDoc(collection(db,'products'),{
           name,
           category,
           price,

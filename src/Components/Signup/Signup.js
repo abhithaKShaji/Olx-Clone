@@ -1,6 +1,5 @@
-import React, { useState,useContext } from 'react';
+import React, { useState } from 'react';
 import Logo from '../../olx-logo.png';
-import { firebaseContext } from '../../store/context';
 import {getAuth,createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
 import './Signup.css';
@@ -14,17 +13,15 @@ export default function Signup() {
  const [email,setEmail] = useState('')
  const [phone,setPhone] = useState('')
  const [password,setPassword] = useState('')
- const {firebase} = useContext(firebaseContext)
 
  const handleSubmit = (e)=>{
    e.preventDefault()
    const auth = getAuth();
 createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>{
   console.log(userCredential);
-  const user = userCredential.user;
   updateProfile(auth.currentUser,{displayName:username}).then(async()=>{
     
-     const docRef = await addDoc(collection(db,"users"),{
+     await addDoc(collection(db,"users"),{
        id:userCredential.user.uid,
        username:username,
        phone:phone
@@ -38,7 +35,7 @@ createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>{
   return (
     <div>
       <div className="signupParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+        <img width="200px" height="200px" src={Logo} alt=""></img>
         <form onSubmit={handleSubmit} >
           <label htmlFor="fname">Username</label>
           <br />
@@ -91,7 +88,7 @@ createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>{
           <br />
           <button>Signup</button>
         </form>
-        <a>Login</a>
+        <button>Login</button>
       </div>
     </div>
   );
