@@ -1,19 +1,95 @@
 .footerParentDiv {
-  width: 100vw;
-}
-.footerParentDiv .content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ebeeef;
-  padding: 16px;
-}
-.footerParentDiv .content .heading {
-  font-size: 24px;
-  font-weight: bolder;
+  width: 100%
 }
 
-.footerParentDiv .footer {
+.footer-banner{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 198px;
+  justify-content: center;
+  background-color: #f7f8f8;
+  border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+.banner-content{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border-right: 2px solid #aaaaaa;
+  height: 70%;
+  margin-left: 44px;
+}
+
+.banner-content h3{
+  font-size: 34px;
+  font-weight: bold;
+  color: #002f34;
+}
+
+.banner-content span{
+  font-size: 20px;
+  color: #002f34;
+}
+
+.banner-links{
+  width: min-content;
+  margin-left: 32px;
+}
+
+.banner-links span{
+  font-size: 14px;
+  font-weight: 600;
+  color: #002f34;
+}
+
+.banner-apps{
+  display: flex;
+}
+
+.banner-apps img{
+  height: 40px;
+  width: 120px;
+  margin-right: 8px;
+}
+
+.footerParentDiv .content{
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.5vw;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: #ebeeef;
+  padding: 16px 0px 32px 0px;
+}
+
+.footer-cards{
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: 134px;
+  padding: 10px;
+}
+
+.footer-cards span ~ span{
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0,47,52,.64);
+}
+
+.footer-cards span ~ span:hover{
+  color: #002f34;
+  cursor: pointer;
+}
+
+.heading{
+  font-size: 14px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.footerParentDiv .footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +98,53 @@
   color: whitesmoke;
 }
 
-.footerParentDiv .footer p {
+.footerParentDiv .footer p{
+  font-size: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0;
 }
+
+.footer p span{
+  font-weight: bold;
+}
+
+.footer-apps img{
+  width: 94px;
+  height: 25px;
+  margin-right: 8px;
+}
+
+.icons li{
+  list-style: none;
+  color: rgba(0,47,52,.64);
+  font-size: 18px;
+  font-weight: 400;
+  padding-right: 23px;
+  margin-right: 9px;
+  padding-bottom: 20px;
+  line-height: 20px;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width:1080px){
+  .footer-banner{
+    display: none;
+  }
+}
+@media screen and (max-width:730px){
+  .footer{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+

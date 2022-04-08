@@ -9,6 +9,7 @@ import Home from './Pages/Home';
 import { AuthContext, firebaseContext } from './store/context';
 import {getAuth,onAuthStateChanged} from 'firebase/auth'
 import Post from './store/postContext';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   const {setUser} = useContext(AuthContext)
@@ -25,18 +26,11 @@ function App() {
  <Post>
   <Router>
     <Routes>
-      <Route exact path='/' element={<Home/>}/>
-    </Routes>
-    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path="/Olx-Clone" element={<Navigate to="/" replace/>} />
       <Route path='/signup' element={<Signup/>}/>
-    </Routes>
-    <Routes>
       <Route path='/login' element={<Login/>}/>
-    </Routes>
-    <Routes>
       <Route path='/create' element={<Create/>}/>
-    </Routes>
-    <Routes>
       <Route path='view' element={<View/>}/>
     </Routes>
   </Router>

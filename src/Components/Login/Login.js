@@ -4,6 +4,7 @@ import Logo from '../../olx-logo.png';
 import './Login.css';
 import {getAuth,signInWithEmailAndPassword} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [email,setEmail] = useState('')
@@ -52,7 +53,7 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <Link to='/signup'><a>Signup</a></Link>
       </div>
     </div>
   );

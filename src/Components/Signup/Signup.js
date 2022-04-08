@@ -29,6 +29,7 @@ createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>{
        username:username,
        phone:phone
      }).then(()=>{
+       alert("You have signed up successfully!")
        navigate('/login')
      })
    })

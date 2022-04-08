@@ -1,25 +1,27 @@
 .bannerParentDiv {
   padding-top: 4em;
 }
-.bannerParentDiv .bannerChildDiv {
-}
+
 .bannerParentDiv .bannerChildDiv .menuBar {
   display: flex;
   padding: 10px 16px 10px 16px;
 }
-
-.bannerParentDiv .bannerChildDiv .menuBar span {
-}
-
-.bannerParentDiv .bannerChildDiv .menuBar .categoryMenu span {
-  margin-right: 16px;
+.categoryMenu .menu {
   font-weight: bolder;
+  border: none;
 }
 
-.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions {
-}
-.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
+ .otherQuickOptions span {
   padding: 10px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Roboto,Arial,Helvetica,sans-serif;
+}
+
+.otherQuickOptions span:hover{
+  color: cadetblue;
+  cursor: pointer;
 }
 
 .bannerChildDiv .banner {

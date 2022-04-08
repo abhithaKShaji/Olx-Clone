@@ -1,5 +1,5 @@
 {
-  "homepage": "https://abhithaKShaji.github.io/olx-clone",
+  "homepage": "https://abhithaKShaji.github.io/Olx-Clone",
   "name": "olx",
   "version": "0.1.0",
   "private": true,
@@ -11,12 +11,13 @@
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "predeploy": "yarn build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
